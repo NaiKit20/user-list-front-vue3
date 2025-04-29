@@ -36,6 +36,7 @@ async function fnDeleteUser() {
         const res = await userService.deleteUserById(props.user.uid);
 
         if (res.statusCode == 200) {
+            cf_modal.value = false;
             emit('onFetchData');
         }
     } catch {
